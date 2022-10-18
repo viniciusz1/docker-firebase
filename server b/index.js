@@ -21,17 +21,19 @@ app.get('/buscar_produtos', async (req, res) => {
 
 app.post('/cadastrarProduto', async (req, res) => {
     const crud = require("./crud")
-    // const url = `http://destino:3000/resgatar_usuario/${req.body.user}/${req.body.password}`;
-    const url = `http://localhost:3000/resgatar_usuario/${req.body.user}/${req.body.password}`;
+    const url = `http://destino:3000/resgatar_usuario/${req.body.user}/${req.body.password}`;
+    // const url = `http://localhost:3000/resgatar_usuario/${req.body.user}/${req.body.password}`;
     nodeFetch(url)
     .then(res => res.text())
-    .then(text => {
+    .then(async text => {
     if(text){
-        // response = crud.save("Products", null, {
-        //     'nome': req.body.nome,
-        //     'preco': req.body.preco
-        // })
-        res.send(text);
+        const response = await crud.save("Products", null, {
+            'name': req.body.nome,
+            'price': req.body.preco,
+            'description': req.body.descricao,
+            'userCPF': text
+        })
+        res.send(response);
     }else{
         res.send('deu pt')
     }

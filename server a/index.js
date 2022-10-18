@@ -26,7 +26,7 @@ async function verificaSeUsuarioExiste(req) {
     user = listaUsuarios.find(e => e['Name'] == req.params.usuario && e['Password'] == req.params.senha)
 
     if(user){
-        return true
+        return user['CPF']
     }
     return false
 }
