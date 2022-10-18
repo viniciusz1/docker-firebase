@@ -1,0 +1,27 @@
+{
+  "name": "atividade_2_containers_vinicius_bonatti_benner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "serve": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viniciusz1/atividade_2_containers_vinicius_bonatti_benner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viniciusz1/atividade_2_containers_vinicius_bonatti_benner/issues"
+  },
+  "homepage": "https://github.com/viniciusz1/atividade_2_containers_vinicius_bonatti_benner#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "firebase": "^9.12.1",
+    "node-fetch": "^3.2.10",
+    "nodemon": "^2.0.20"
+  }
+}
